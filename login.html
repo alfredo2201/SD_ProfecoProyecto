@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/colors1.css" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <title>Ingresar</title>
 </head>
 <body>
@@ -62,17 +63,16 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 appointment_form">
                       <div class="form_section">
-                        <form class="form_contant" action="index.html">
+                        <form class="form_contant" method="get">
                           <fieldset class="row">
                           <div class="field col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <input class="field_custom" placeholder="Email*" type="email" required>
-                          </div>
-                          
+                            <input id="txt_email" placeholder="Email*" type="email" required>
+                          </div>                          
                           <div class="field col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <input class="field_custom" placeholder="Contraseña*" type="password" required>
+                            <input id="txt_password" placeholder="Contraseña*" type="password" required>
                           </div>
                           <div class="center">
-                            <button class="btn main_bt">Enviar</button>
+                            <button class="btn main_bt" type="button" onclick="login()">Enviar</button>
                           </div>
                           </fieldset>
                         </form>
@@ -92,4 +92,5 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/wow.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/login.js"></script>
 </html>

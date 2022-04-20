@@ -1520,10 +1520,9 @@ body.light_blue #full_slider.full_slider_inner {
 		7. SECTION
 	-------------------------------------------------------------------*/
 
-.padding_layout_1 {
+section.padding_layout_1 {
 	padding-top: 120px;
-	padding-bottom: 0px;
-
+	padding-bottom:30px;
 }
 
 .padding_layout_2 {
@@ -2123,7 +2122,7 @@ section.dottad_star_bg {
 
 /**== Form ==**/
 
-input.field_custom {
+input {
 	border: solid #e1e1e1 1px;
 	width: 100%;
 	background: #f8f8f8;
