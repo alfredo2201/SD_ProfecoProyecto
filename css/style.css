@@ -1522,7 +1522,12 @@ body.light_blue #full_slider.full_slider_inner {
 
 section.padding_layout_1 {
 	padding-top: 120px;
+<<<<<<< HEAD
 	padding-bottom:30px;
+=======
+	padding-bottom: 30px;
+
+>>>>>>> b19b235078eaefb4ea7ea4b3ded851e5857d98ed
 }
 
 .padding_layout_2 {
