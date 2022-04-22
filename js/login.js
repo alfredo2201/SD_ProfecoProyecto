@@ -54,12 +54,12 @@ function register(){
 
 }
 
-function login(){
+function loginUser(){
     let email = document.getElementById("txt_email")
     let password = document.getElementById("txt_password")
     $.ajax({
         url:"http://localhost:2424/users/getUser",
-        type:"POST",        
+        type:"GET",        
         headers: {           
         "Access-Control-Allow-Headers" : "Content-Type",
         "Access-Control-Allow-Origin": "*",
