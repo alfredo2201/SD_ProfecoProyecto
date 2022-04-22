@@ -20,7 +20,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-          <div class="logo"> <a href="index.html"><img src="images/logos/logo_Mx.png" alt="logo" /></a> </div>
+          <div class="logo"> <a href="home.php"><img src="images/logos/logo_Mx.png" alt="logo" /></a> </div>
         </div>
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
           <div class="menu_side">
