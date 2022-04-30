@@ -43,14 +43,14 @@ function registerUser() {
         success: function (resp) {                    
             if (resp == "ok") {
                 alert("Usuario creado exitosamente...")
-                window.location.href = "home.html"
+                window.location.href = "login.html"
             }
             else {
                 alert("El nombre de usuario o la contraseña son incorrectos, verifique con cuidado ~~") // Error al iniciar sesión
             }
         },
         error: function (errorThrown, estado) {
-            alert("Ah ocurrido un error: " + estado)
+            alert("Ha ocurrido un error: " + estado)
         }
     })
 
@@ -83,16 +83,35 @@ function loginUser() {
         dataType: 'json',
         processData: false,
         success: function (resp) {
-            if (resp !== null) {                
+            if (resp !== null) {
+                if (window.localStorage) {
+                    localStorage.setItem("key", email);
+                  }     
                 window.location.href = "home.html"
+                
             }
             else {
                 alert("El email o la contraseña son incorrectos, verifique con cuidado ~~") // Error al iniciar sesión
             }
         },
         error: function (errorThrown) {
-            alert("Ah ocurrido un error: " + errorThrown)
+            alert("Ha ocurrido un error: " + errorThrown)
         }
     })
 
+}
+
+function logOut() {
+    localStorage.removeItem('key');
+    window.location.href="login.html";
+}
+
+function noSession(){
+    let key = localStorage.getItem('key');
+        console.log(key);
+        if(key==null)
+        {
+          alert('Necesitas iniciar sesión primero');
+          window.location.href="login.html";
+        }
 }

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/colors1.css" />
 </head>
 
-<body id="default_theme" class="it_shop_list">
+<body id="default_theme" class="it_shop_list" onload = "noSession()">
   <div class="bg_load"> <img class="loader_animation" src="images/logos/logo_Profeco.png" alt="#" /> </div>
   <header id="default_header" class="header_style_1">
     <div class="header_top">
@@ -22,16 +22,17 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <div class="logo"> <a href="index.html"><img src="images/logos/logo_Mx.png" alt="logo" /></a> </div>
+            <div class="logo"> <a href="home.html"><img src="images/logos/logo_Mx.png" alt="logo" /></a> </div>
           </div>
           <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
             <div class="menu_side">
               <div id="navbar_menu">
                 <ul class="first-ul">
-                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="home.html">Inicio</a></li>
                   <li><a href="it_shop.html">Productos en oferta</a></li>
                   <li><a href="it_wishlist.html">Whishlist</a></li>
                   <li><a href="contact.html">Contáctanos</a></li>
+                  <li><a href="login.html" onclick="logOut()">Cerrar sesión</a></li>
               </div>
             </div>
           </div>
@@ -199,6 +200,7 @@
                       <p>asesoria@profeco.gob.mx www.profeco.gob.mx
                         PARA CUALQUIER DUDA O COMENTARIO COMUNIQUESE A LOS TELEFONOS:
                         01(800) 4688722 o (55) 55688722</p>
+                      <h2>Sesión iniciada por: <script>document.write(localStorage.getItem('key'));</script></h2>
                     </div>
                   </div>
 
@@ -213,7 +215,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/wow.js"></script>
     <script src="js/custom.js"></script>
-
+    <script src="js/login.js"></script>
 </body>
 
 </html>
