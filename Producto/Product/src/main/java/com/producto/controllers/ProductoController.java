@@ -1,5 +1,10 @@
 package com.producto.controllers;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.producto.models.Producto;
@@ -63,9 +68,43 @@ public class ProductoController {
         return productoService.obtenerProductos();
     }
 
+    @GetMapping("/getProductById/{id}")
+    public Producto getProductoById(@PathVariable("id") int id) {
+        return productoService.obtenProductoById(id);
+    }
+
     @GetMapping("/getProduct/{nombre}")
     public List<Producto> getProducto(@PathVariable("nombre") String nombre) {
-        System.out.println(nombre);
-        return productoService.obtenProductoByNombre(nombre);
+        try {
+        List<Producto> productos =new ArrayList<Producto>();
+            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/usersdb?useSSL=false", "root", "123456") ;
+            Statement stmt = conn.createStatement() ;
+            String query = "select * from usersdb.producto where nombre like \"%" + nombre +"%\" ;" ;
+            ResultSet rs = stmt.executeQuery(query) ;
+            while (rs.next()){
+                Producto prod = new Producto();
+                int id = rs.getInt("id");
+                String nom = rs.getString("nombre");
+                String descripcion = rs.getString("descripcion");
+                float precio = rs.getFloat("precio");
+                String imagen = rs.getString("imagen");
+                float puntuacion = rs.getFloat("puntuacion");
+                String vendedor = rs.getString("vendedor");
+                
+                prod.setId(id);
+                prod.setNombre(nom);
+                prod.setDescripcion(descripcion);
+                prod.setPrecio(precio);
+                prod.setImagen(imagen);
+                prod.setPuntuacion(puntuacion);
+                prod.setVendedor(vendedor);
+
+                productos.add(prod);
+            }
+            return productos; 
+        } catch (Exception e) {
+            return productoService.obtenProductoByNombre(nombre);
+        }
+        
     }
 }
