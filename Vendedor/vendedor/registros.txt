@@ -1,0 +1,14 @@
+CREATE TABLE `vendedor` (
+  `id` int NOT NULL,
+  `nombre` varchar(30) DEFAULT NULL,
+  `imagen` mediumblob,
+  `puntuacion` float DEFAULT NULL,
+  PRIMARY KEY (`id_vendedor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO usersdb.vendedor (id, nombre, imagen, puntuacion) VALUES (1, "Aurrera", "https://iconape.com/wp-content/files/gg/21344/png/aurrera-2.png", 2.9);
+INSERT INTO usersdb.vendedor (id, nombre, imagen, puntuacion) VALUES (2, "Soriana", "https://yt3.ggpht.com/-PZQk1dWcvVc/AAAAAAAAAAI/AAAAAAAAAAA/yyGjsitfgMg/s900-c-k-no-mo-rj-c0xffffff/photo.jpg", 4);
+INSERT INTO usersdb.vendedor (id, nombre, imagen, puntuacion) VALUES (3, "Ley", "https://4.bp.blogspot.com/-ucQUYBuqL9Q/WEuEjXtB_MI/AAAAAAAAGFo/Eyj5-BjfOIokkoL4IMdT1e2rsXFjddMGQCK4B/w1200-h630-p-k-no-nu/Casa%2BLey%2Bvector%2Blogo.png", 1.5);
+INSERT INTO usersdb.vendedor (id, nombre, imagen, puntuacion) VALUES (4, "Walmart", "https://bodhih.com/wp-content/uploads/2020/07/Walmart_logo_transparent_png-2048x539.png", 4.1);
+INSERT INTO usersdb.vendedor (id, nombre, imagen, puntuacion) VALUES (5, "Sam's", "https://ronssignco.com/wp-content/uploads/2017/06/sams-logo.png", 2.5);
+INSERT INTO usersdb.vendedor (id, nombre, imagen, puntuacion) VALUES (6, "Oxxo", "https://www.about-payments.com/logo/300/225/2429", 4.6);
