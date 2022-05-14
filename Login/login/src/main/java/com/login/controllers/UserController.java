@@ -25,10 +25,10 @@ public class UserController {
     public ResponseEntity<?> createUser(@RequestBody User usuario) {
         if((usuario.getName() != null) && (usuario.getEmail() != null) && (usuario.getPassword() != null)){            
             if(userService.crearUsuario(usuario)){
-                return new ResponseEntity<>("ok", HttpStatus.OK);
+                return new ResponseEntity<String>("ok", HttpStatus.OK);
             }
         }        
-        return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<String>("error", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @GetMapping("/allUsers")
