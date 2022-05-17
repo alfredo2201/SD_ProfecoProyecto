@@ -14,7 +14,7 @@ function noProduct() {
 }
 function getProduct(id) {
     $.ajax({
-        url: "http://localhost:2424/products/getProductById/" +id,
+        url: "http://localhost:8086/products/getProductById/" +id,
         type: "GET",
         contentType: "application/json; charset=utf-8",
         cache: false,

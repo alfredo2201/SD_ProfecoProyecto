@@ -7,7 +7,7 @@ function getAllProducts(event) {
 }
 function getAll() {
     $.ajax({
-        url: "http://localhost:2424/products/allProducts",
+        url: "http://localhost:8086/products/allProducts",
         type: "GET",
         contentType: "application/json; charset=utf-8",
         cache: false,
@@ -25,7 +25,7 @@ function getAll() {
 }
 function getSearch(valor) {
     $.ajax({
-        url: "http://localhost:2424/products/getProduct/" + valor,
+        url: "http://localhost:8086/products/getProduct/" + valor,
         type: "GET",
         contentType: "application/json; charset=utf-8",
         cache: false,

@@ -27,7 +27,7 @@ function registerUser() {
     }
 
     $.ajax({
-        url: "http://localhost:8080/login-0.0.1-SNAPSHOT/users/saveUser",
+        url: "http://localhost:8085/users/saveUser",
         type: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ function loginUser() {
         return
     }
     $.ajax({
-        url: "http://localhost:8080/login-0.0.1-SNAPSHOT/users/getUser/?email="+email+"&password="+password,
+        url: "http://localhost:8085/users/getUser/?email="+email+"&password="+password,
         type: "GET",
         headers: {
             'Content-Type': 'application/json',

@@ -30,15 +30,15 @@ public class ProductoController {
     ProductoService productoService;
 
     @PostMapping("/saveProduct")
-    public ResponseEntity<?> createProduct(@RequestBody Producto producto) {
+    public ResponseEntity<String> createProduct(@RequestBody Producto producto) {
         if ((producto.getNombre() != null) && (producto.getDescripcion() != null) && (producto.getPrecio() != 0.0)
          //&& (producto.getImage() != null)
          ) {
             if(productoService.agregarProducto(producto)) {
-                return new ResponseEntity<>("ok", HttpStatus.OK);
+                return new ResponseEntity<String>("ok", HttpStatus.OK);
             }
         }
-        return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<String>("error", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @DeleteMapping("/deleteProduct/{id}")
