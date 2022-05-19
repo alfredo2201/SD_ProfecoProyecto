@@ -35,7 +35,7 @@
                     <li><a href="it_shopSupers.html">Supermercados</a></li>
                     <li><a href="it_wishlist.html">Whishlist</a></li>
                     <li><a href="contact.html">Contáctanos</a></li>
-                    <li><a href="index.html" onclick="logOut()">Cerrar sesión</a></li>
+                    <li><a href="login.html" onclick="logOut()">Cerrar sesión</a></li>
             </div>
           </div>
         </div>
@@ -94,6 +94,7 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#description">Descripción</a> </li>
                   <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#reviews">Comentarios (2)</a> </li>
+                  <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#inconsistence">Inconsistencias</a></li>
                 </ul>
                 
                 <div class="tab-content">
@@ -109,7 +110,7 @@
                         pharetra a finibus vitae, lobortis et mi.</p>
                     </div>
                   </div>
-                  <div id="reviews" class="tab-pane fade">
+                  <div class="tab-pane fade"  id="reviews">
                     <div class="product_review">
                       <h3>Comentarios (2)</h3>
                       <div class="commant-text row">
@@ -150,13 +151,22 @@
                                 <div class="full_bt center">
                                   <button class="btn sqaure_bt" type="submit">Enviar</button>
                                 </div>
-                                <div class="full_bt center">
-                                  <button class="btn sqaure_bt" type="submit">Enviar y reportar irregularidades</button>
-                                </div>
                               </form>
                             </div>
                           </div>
                         </div>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="tab-pane fade"  id="inconsistence">
+                    <div class="product_review">
+                      <h3>Reporte de inconsistencias</h3>
+                      <div class="field col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <input id="txt_titulo" placeholder="Titulo de la inconsistencia..." type="text" required>
+                      </div>
+                      <textarea class="form-control animated" cols="50" id="txt_descripcion" name="comment" placeholder="Inserte aqui la inconsistencia detectada..." required=""></textarea>                      
+                      <div class="float-right">
+                        <button class="btn sqaure_bt"  role="button"  onclick="enviarReporte()">Enviar inconsistencia</button> 
                       </div>
                     </div>
                   </div>
@@ -192,7 +202,6 @@
                   <h2>Sesión iniciada por: <script>document.write(localStorage.getItem('key'));</script></h2>
                 </div>
               </div>
-              
             </div>
           </div>
         </div>
@@ -209,6 +218,7 @@
 <script src='js/hizoom.js'></script>
 <script src="js/login.js"></script>
 <script src="js/details.js"></script>
+<script src="js/reporte.js"></script>
 
 <script>
         $('.hi1').hiZoom({

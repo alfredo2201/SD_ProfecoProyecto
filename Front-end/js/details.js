@@ -37,6 +37,7 @@ function recuperarDatos(data) {
     $("#store").html("Vendedor: " + data.vendedor)
     $("#description1").html(data.descripcion)
     $("#description2").html(data.descripcion)
+    localStorage.setItem('vend',data.vendedor)
 
     var puntos = data.puntuacion;
     if (puntos <= 0) {
